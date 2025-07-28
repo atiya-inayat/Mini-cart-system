@@ -1,9 +1,12 @@
 import React from "react";
+import useCartStore from "../store/cartStore";
 
 const Total = () => {
+  const getTotal = useCartStore((state) => state.getTotal);
+
   return (
     <>
-      <h1> shows total price.</h1>
+      <button onClick={() => getTotal()}>Total</button>
     </>
   );
 };

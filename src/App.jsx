@@ -1,10 +1,14 @@
 import "./App.css";
-import CartPage from "./components/CartPage";
+import Cart from "./components/Cart";
+import ProductList from "./components/ProductList";
+import Total from "./components/Total";
 
 function App() {
   return (
     <>
-      <CartPage />
+      <ProductList />
+      <Cart />
+      {/* <Total /> */}
     </>
   );
 }
