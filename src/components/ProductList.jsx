@@ -30,20 +30,22 @@ const ProductList = () => {
 
   return (
     <>
-      <div>
-        <ul>
-          {/* question mark is for safe check if data is fetched or not */}
-          {data?.map((item) => (
-            <li key={item.id}>
-              <h3>{item.title}</h3>
-              <p>${item.price}</p>
-              <button onClick={() => addToCart(item)}>Add to cart</button>
-            </li>
-          ))}
-        </ul>
+      <div className="items-container">
+        {data?.map((item) => (
+          <div className="item" key={item.id}>
+            <h2 className="title">{item.title}</h2>
+            <p className="price">${item.price}</p>
+            <button className="addTCartBtn" onClick={() => addToCart(item)}>
+              Add to cart
+            </button>
+          </div>
+        ))}
       </div>
     </>
   );
 };
+{
+  /* question mark is for safe check if data is fetched or not */
+}
 
 export default ProductList;
