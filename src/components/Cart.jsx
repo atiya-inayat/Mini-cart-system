@@ -8,16 +8,26 @@ const Cart = () => {
 
   return (
     <>
-      <div>
+      <div className="cart-container">
         {cartItems.map((item) => (
-          <li key={item.id}>
-            <h2>{item.title}</h2>
-            <p>{item.price}</p>
-            <p>{item.quantity}</p>
-            <button onClick={() => removeFromCart(item)}>Remove</button>
+          <li className="item" key={item.id}>
+            <h2 className="item-title">{item.title}</h2>
+            <p className="price">${item.price}</p>
+            <div className="quantity-remove-container">
+              <p className="quantity">Quantity: {item.quantity}</p>
+              <button
+                className="removeBtn"
+                onClick={() => removeFromCart(item.id)}
+              >
+                Remove
+              </button>
+            </div>
           </li>
         ))}
-        <p>💰 Total: {getTotal()}</p>
+        <div className="total-container">
+          <p className="total">💰 Total: </p>
+          <p className="total-price">${getTotal()}</p>
+        </div>
       </div>
     </>
   );

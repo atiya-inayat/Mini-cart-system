@@ -50,7 +50,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: auto;
+  max-width: 100vw;
+  /* overflow: hidden; */
+  padding: 4rem;
   scrollbar-width: none;
 }
 
@@ -74,15 +76,19 @@
 
 .product-container {
   /* background-color: aqua; */
-  display: flex;
-  align-items: start;
-  justify-content: space-around;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 1rem;
+}
+
+.cards-container {
+  grid-column: span 2;
 }
 
 .items-container {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
@@ -92,7 +98,7 @@
   margin: 1.5rem;
 }
 
-.item {
+.items {
   background: white;
   padding: 1rem;
   border-radius: 8px;
@@ -102,13 +108,11 @@
   align-items: start;
   justify-content: start;
   flex-direction: column;
-  /* height: 150px; */
-  width: 350px;
   border: 1px solid rgb(230, 225, 225);
 }
 
 .title {
-  white-space: nowrap;
+  /* white-space: nowrap; */
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
@@ -132,4 +136,82 @@
   font-weight: 800;
   background-color: black;
   border-radius: 8px;
+  cursor: pointer;
+}
+
+.cart-container {
+  /* background-color: aqua; */
+  /* width: 500px; */
+}
+
+.item-title {
+  /* white-space: nowrap; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  padding: 10px;
+  font-size: 1.5rem;
+  font-weight: 550;
+}
+
+.item {
+  padding: 10px;
+  list-style: none;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  border: 2px solid rgb(230, 225, 225);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgb(201, 198, 198);
+  width: 100%;
+}
+
+.quantity-remove-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.quantity {
+  font-size: 1.3rem;
+  color: rgb(148, 143, 143);
+}
+
+.removeBtn {
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgb(230, 62, 62);
+  box-shadow: 0 2px 5px rgb(150, 83, 83);
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 900;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+.removeBtn:hover {
+  /* transform: translateX(-5px); */
+  transform: scale(1.05);
+}
+
+.total-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  border: 1px solid rgb(230, 225, 225);
+  box-shadow: 0px 2px 5px rgb(201, 198, 198);
+  padding: 10px;
+  width: 100%;
+}
+
+.total {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.total-price {
+  font-size: 1.5rem;
+  font-weight: 700;
 }

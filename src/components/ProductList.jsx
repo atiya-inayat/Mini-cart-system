@@ -30,11 +30,11 @@ const ProductList = () => {
 
   return (
     <>
-      <div className="">
+      <div className="cards-container">
         <h1 className="product-heading">Products</h1>
         <div className="items-container">
           {data?.map((item) => (
-            <div className="item" key={item.id}>
+            <div className="items" key={item.id}>
               <h3 className="title">{item.title}</h3>
               <h2 className="price">${item.price}</h2>
               <button className="addTCartBtn" onClick={() => addToCart(item)}>
